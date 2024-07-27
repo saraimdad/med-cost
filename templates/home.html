@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Cost Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="login">
+            <h1 class="text-center">Medical Cost Prediction</h1>
+            <form action="{{ url_for('predict_data') }}" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Age</label>
+                    <input class="form-control" type="number" name="age" placeholder="Enter your age" min="0" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <select class="form-control" name="sex" required>
+                        <option class="placeholder" selected disabled value="">Select your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">BMI</label>
+                    <input class="form-control" type="number" name="bmi" step="0.1" placeholder="Enter your BMI" min="0" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Number of Children</label>
+                    <input class="form-control" type="number" name="children" placeholder="Enter number of children" min="0" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Smoker</label>
+                    <select class="form-control" name="smoker" required>
+                        <option class="placeholder" selected disabled value="">Select Smoking Status</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Region</label>
+                    <select class="form-control" name="region" required>
+                        <option class="placeholder" selected disabled value="">Select Region</option>
+                        <option value="southwest">Southwest</option>
+                        <option value="southeast">Southeast</option>
+                        <option value="northwest">Northwest</option>
+                        <option value="northeast">Northeast</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Predict Medical Cost" />
+                </div>
+            </form>
+            <h2 class="text-center">
+                Prediction Result: {{results}}
+            </h2>
+        </div>
+    </div>
+</body>
+</html>
+
+
