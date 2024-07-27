@@ -3,7 +3,6 @@ import os
 from datetime import datetime
 
 
-
 logging_str = '[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s]'
 LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
 
@@ -17,3 +16,4 @@ logging.basicConfig(
     format=logging_str,
     level=logging.INFO,
 )
+ 
